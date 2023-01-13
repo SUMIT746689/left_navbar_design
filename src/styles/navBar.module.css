@@ -1,0 +1,26 @@
+
+.category_hover{
+  display: flex;
+  position: relative;
+  border-right: 10px;
+}
+.category_hover:hover{
+  background-color:#6b21a8 ;
+}
+.icons {
+  position: absolute;
+  right: 20px;
+  animation-duration: ease-in-out 1s;
+  transition: .5s;
+}
+
+.icons_select{
+  position: absolute;
+  right: 20px;
+  rotate: 90deg;
+}
+.icons_deselect{
+  position: absolute;
+  right: 20px;
+  rotate: 0deg;
+}

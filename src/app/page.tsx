@@ -1,90 +1,17 @@
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from './page.module.css'
+import Navbar from './navbar'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-        <div className={styles.thirteen}>
-          <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
-        </div>
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+    <main style={{ display: 'flex',gap:'4px' }} >
+      <Navbar  />
+      <div>
+        <h1>Hi</h1>
+        <img src={"data:image/png;base64,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"} />
       </div>
     </main>
   )
