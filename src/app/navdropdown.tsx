@@ -12,7 +12,7 @@ export default function ({ click, children }) {
 
   const data = children.map((child: any, index: number) => {
     return <div
-      style={{ display:'none',padding: '10px', borderBottom: '1px solid white', backgroundColor: '#c084fc' }}
+      style={{height:'0px', backgroundColor: '#c084fc', animationDirection: "ease-in-out .2s", transition: '.2s',transform:'scale(0)'}}
       key={index}
       ref={(element) => { ref.current[index] = element }}
     >
@@ -20,16 +20,24 @@ export default function ({ click, children }) {
       {child}
 
     </div >
-  })
-
+  });    
   useEffect(() => {
 
     ref.current.forEach(((r: any, index: number) => {
 
       setTimeout(() => {
-        if (!click) r.style.display = 'none';
-        if (click) r.style.display = 'block';
-      }, 25 * index)
+        // if (!click) r.style.display = 'none';
+        if (!click) r.style.padding = '0px';
+        if (!click) r.style.height = '0px';
+        if (!click) r.style.borderBottom = 'none';
+        if (!click) r.style.transform = 'scale(0)';
+
+        if (click) r.style.height = '40px';
+        if (click) r.style.padding = '10px';
+        if (click) r.style.borderBottom = '1px solid white';
+        if (click) r.style.transform = 'scale(1)';
+
+      }, 20 * index)
 
     }))
 

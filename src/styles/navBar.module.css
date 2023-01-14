@@ -10,8 +10,8 @@
 .icons {
   position: absolute;
   right: 20px;
-  animation-duration: ease-in-out 1s;
-  transition: .5s;
+  animation-duration: ease-in-out .2s;
+  transition: .2s;
 }
 
 .icons_select{
