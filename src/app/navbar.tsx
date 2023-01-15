@@ -22,7 +22,7 @@ export default function () {
             style={{ padding: '12px 2px', borderBottom: '1px solid white', }}
             onClick={() => setClick((v) => !v)}
           >
-            <AiOutlineHome style={{margin:'0px 4px'}} />  All Pages s <AiOutlineDoubleRight className={click ? `${styles.icons_select} ${styles.icons}` : `${styles.icons} ${styles.icons_deselect}`} />
+            <AiOutlineHome style={{margin:'0px 4px',zIndex:'10'}} />  All Pages s <AiOutlineDoubleRight className={click ? `${styles.icons_select} ${styles.icons}` : `${styles.icons} ${styles.icons_deselect}`} />
           </div>
           <Navdropdown click={click} >
             <div>HI</div>
