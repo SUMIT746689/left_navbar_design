@@ -13,7 +13,10 @@ export default function ({ click, children }: NAVINTER) {
 
   const data = children.map((child: any, index: number) => {
     return <div
-      style={{ height: '0px', padding: '0px', backgroundColor: '#c084fc', transitionDuration: '500ms', overflow: 'hidden' }}
+<!-- animation_navbar_2 -->
+<!--       style={{ height: '0px', padding: '0px', backgroundColor: '#c084fc', transitionDuration: '500ms', overflow: 'hidden' }} -->
+<!--       style={{ display:'none',padding: '10px', borderBottom: '1px solid white', backgroundColor: '#c084fc' }} -->
+<!-- >>>>>>> main -->
       key={index}
       ref={(element) => { ref.current[index] = element }}
     >
@@ -24,9 +27,10 @@ export default function ({ click, children }: NAVINTER) {
   })
 
   useEffect(() => {
-    // const totalLength = ref.current.length 
+
     ref.current.forEach(((r: any, index: number) => {
-      // let totalTime = 1000 / totalLength;
+<!-- <<<<<<< animation_navbar_2 -->
+<!--       // let totalTime = 1000 / totalLength; -->
       setTimeout(() => {
         if (!click) r.style.height = '0px';
         if (!click) r.style.opacity = '0';
@@ -39,8 +43,13 @@ export default function ({ click, children }: NAVINTER) {
         if (click) r.style.padding = '8px';
         if (click) r.style.transform = 'translateX(0px)';
         if (click) r.style.borderBottom = '1px solid white';
+// =======
+// >>>>>>> main
 
-      }, 25 * index)
+//       setTimeout(() => {
+//         if (!click) r.style.display = 'none';
+//         if (click) r.style.display = 'block';
+//       }, 25 * index)
 
     }))
 
